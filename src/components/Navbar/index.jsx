@@ -75,7 +75,7 @@ const useStyles = makeStyles(theme => ({
 
 const StyleApp = withStyles({
   root: {
-    background: 'linear-gradient(to right, #333333, #dd1818)',
+    background: 'linear-gradient(to right, #000000, #870000)',
     color: 'white',
   },
 })(AppBar, Toolbar);
@@ -101,7 +101,7 @@ export default function NavBar() {
 
   return (
     <div className={classes.root}>
-      <StyleApp position="static">
+      <StyleApp position="fixed">
         <Toolbar>
           {/* <IconButton
             edge="start"
