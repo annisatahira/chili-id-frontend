@@ -19,6 +19,7 @@ import Badge from '@material-ui/core/Badge';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Link from '@material-ui/core/Link';
+// import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -101,7 +102,7 @@ export default function NavBar() {
 
   return (
     <div className={classes.root}>
-      <StyleApp position="fixed">
+      <StyleApp position="static">
         <Toolbar>
           {/* <IconButton
             edge="start"
@@ -111,19 +112,23 @@ export default function NavBar() {
           >
             <MenuIcon />
           </IconButton> */}
-          <Typography variant="h6">Chilli Indonesia</Typography>
+          <Typography variant="h6">
+            <Link href="/home" color="inherit" underline="none">
+              Chilli Indonesia
+            </Link>
+          </Typography>
           <Typography variant="h8" className={classes.space}>
-            <Link href="#" color="inherit" underline="none">
+            <Link href="/product" color="inherit" underline="none">
               Product
             </Link>
           </Typography>
           <Typography variant="h8" className={classes.space}>
-            <Link href="#" color="inherit" underline="none">
+            <Link href="/preorder" color="inherit" underline="none">
               Pre-Order
             </Link>
           </Typography>
           <Typography variant="h8" className={classes.title}>
-            <Link href="#" color="inherit" underline="none">
+            <Link href="/about" color="inherit" underline="none">
               About
             </Link>
           </Typography>
@@ -175,8 +180,24 @@ export default function NavBar() {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Login</MenuItem>
-                <MenuItem onClick={handleClose}>Register</MenuItem>
+                <MenuItem onClick={handleClose}>
+                  <Link
+                    href="/login"
+                    color="inherit"
+                    underline="none"
+                  >
+                    Login
+                  </Link>
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                  <Link
+                    href="/register"
+                    color="inherit"
+                    underline="none"
+                  >
+                    Register
+                  </Link>
+                </MenuItem>
               </Menu>
             </div>
           )}
